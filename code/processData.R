@@ -1,6 +1,9 @@
 #!/usr/bin/env Rscript
 
-## This function will do the data processing for all of the plotting scripts. It will output a .Rda file for fast loading that the individual scripts can load and use. The plotting scripts will check for the presence of the .Rda file and source this script if necessary.
+## This function will do the data processing for all of the plotting scripts.
+## It will output a .Rda file for fast loading that the individual scripts
+## can use. The plotting scripts will check for the presence of the .Rda file
+## and source this script if necessary.
 
 processData <- function(dates=c('1/2/2007', '2/2/2007')) {
    
