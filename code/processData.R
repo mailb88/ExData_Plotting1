@@ -4,8 +4,7 @@
 ## It will output a .Rda file for fast loading that the individual scripts
 ## can use. The plotting scripts will check the current working directory
 ## for the presence of the .Rda file. If found it will be loaded, if not found
-## this script will be sourced in and processData will be run. The processed
-## and source this script if necessary.
+## this script will be sourced in and processData will be run.
 
 processData <- function(dates=c('1/2/2007', '2/2/2007')) {
    
