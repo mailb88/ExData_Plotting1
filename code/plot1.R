@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
-# Load the Rda file with processed data if possible, import the processData function from processData.R if it isn't. processData will create the Rda file for future use.
+## Construct the first plot, as per directions. Load the Rda file if possible,
+## use processData() from processData.R to create the file if it does not exist.
+
 
 if (! 'elecData.Rda' %in% dir()) {
     source('processData.R')
