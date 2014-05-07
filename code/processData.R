@@ -2,7 +2,9 @@
 
 ## This function will do the data processing for all of the plotting scripts.
 ## It will output a .Rda file for fast loading that the individual scripts
-## can use. The plotting scripts will check for the presence of the .Rda file
+## can use. The plotting scripts will check the current working directory
+## for the presence of the .Rda file. If found it will be loaded, if not found
+## this script will be sourced in and processData will be run. The processed
 ## and source this script if necessary.
 
 processData <- function(dates=c('1/2/2007', '2/2/2007')) {
@@ -19,6 +21,14 @@ processData <- function(dates=c('1/2/2007', '2/2/2007')) {
 	save(elecData, file='elecData.Rda')		
 }
 
+## Allow the script to be called from the terminal.
 if (! interactive()) processData()
 
-
+## Potential improvements:
+## 	- Currently the two dates are hardcoded in. From the interpretor we
+##	  could pass different values in, as long as they are a character 
+##	  vector. It would be more user friendly to accept a date range,
+##	  (start, stop). In addition the hardcoded file output would need to
+## 	  changed into a parameter to be specified.
+##	- Currently the script accepts no command line args, it would be 
+##	  possible, and potentially beneficial, to accept them.
